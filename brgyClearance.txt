@@ -1,0 +1,6 @@
+name:{
+    firstname:String,
+    lastname:String
+},
+timeStamp:DateTime,
+accessCode:String,
