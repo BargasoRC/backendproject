@@ -17,28 +17,30 @@ module.exports = function (docType, document, res) {
                 });
             break;
         case 'barangay-indigency':
-            models.brgyIndigency.insertOne(document, (err, result) => {
-                console.log(result)
-            }).catch(err => {
-                if (err) {
-                    console.log(err);
-                    res.status(503).json({
-                        message: "Service unavailable"
-                    });
-                }
-            });
+            let bryIndigency = new models.brgyIndigency(document);
+            brgyIndigency
+                .save()
+                .then(() => {
+                    response.data.body.details = document;
+                    res.send(response);
+                })
+                .catch(err => {
+                    response.error.message = err;
+                    res.send(response);
+                });
             break;
         case 'business-clearance':
-            models.businessClearance.insertOne(document, (err, result) => {
-                console.log(result)
-            }).catch(err => {
-                if (err) {
-                    console.log(err);
-                    res.status(503).json({
-                        message: "Service unavailable"
-                    });
-                }
-            });
+            let clearance = new models.businessClearance(document);
+            clearance
+                .save()
+                .then(() => {
+                    response.data.body.details = document;
+                    res.send(response);
+                })
+                .catch(err => {
+                    response.error.message = err;
+                    res.send(response);
+                });
             break;
     }
 };
