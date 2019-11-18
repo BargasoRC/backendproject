@@ -17,7 +17,7 @@ module.exports = function (docType, document, res) {
                 });
             break;
         case 'barangay-indigency':
-            let bryIndigency = new models.brgyIndigency(document);
+            let brgyIndigency = new models.brgyIndigency(document);
             brgyIndigency
                 .save()
                 .then(() => {
