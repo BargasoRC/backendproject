@@ -3,64 +3,62 @@ const Schema = mongoose.Schema;
 
 let brgyClearanceSchema = new Schema({
     name: {
-        firstName: String,
-        lastName: String,
-        middleName: String,
-        suffix: String
+        firstName: {type:String,required:true},
+        lastName: {type:String,required:true},
+        middleName: {type:String,required:false},
+        suffix: {type:String,required:false}
     },
-    age: Number,
-    sex: String,
-    citizenship: String,
-    civilStatus: String,
+    age: {type:Number,required:true},
+    sex: {type:String,required:true},
+    citizenship: {type:String,required:true},
+    civilStatus: {type:String,required:true},
     address: {
-        sitio:String,
-        barangay:String,
-        municipality:String,
-        province:String
+        sitio:{type:String,required:true},
+        barangay:{type:String,required:true},
+        municipality:{type:String,required:true},
+        province:{type:String,required:true}
     },
-    accessCode: String
+    accessCode: {type:String,required:true,unique:true}
 }, {
     collection: "barangay_clearance"
 });
 
 let brgyIndigencySchema = new Schema({
     name: {
-        firstName: String,
-        lastName: String,
-        middleName: String,
-        suffix: String
+        firstName: {type:String,required:true},
+        lastName: {type:String,required:true},
+        middleName: {type:String,required:false},
+        suffix: {type:String,required:false}
     },
-    age: Number,
-    sex: String,
+    age: {type:Number,required:true},
+    sex: {type:String,required:true},
     address: {
-        streetNo: String,
-        street: String,
-        city: String,
-        country: String,
-        zip: String
+        sitio:{type:String,required:true},
+        barangay:{type:String,required:true},
+        municipality:{type:String,required:true},
+        province:{type:String,required:true}
     },
-    accessCode: String
+    accessCode: {type:String,required:true,unique:true}
 }, {
     collection: "barangay_indigency"
 });
 
 let businessClearanceSchema = new Schema({
     name: {
-        firstName: String,
-        lastName: String,
-        middleName: String,
-        suffix: String
+        firstName: {type:String,required:true},
+        lastName: {type:String,required:true},
+        middleName: {type:String,required:false},
+        suffix: {type:String,required:false}
     },
-    businessType: String,
-    dateStarted: String,
+    businessType: {type:String,required:true},
+    dateStarted: {type:String,required:true},
     address: {
-        streetNo: String,
-        street: String,
-        city: String,
-        country: String,
-        zip: String
+        sitio:{type:String,required:true},
+        barangay:{type:String,required:true},
+        municipality:{type:String,required:true},
+        province:{type:String,required:true}
     },
-    accessCode: String
+    accessCode: {type:String,required:true,unique:true}
 }, {
     collection: "business_clearance"
 });
