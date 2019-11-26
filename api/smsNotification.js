@@ -14,5 +14,5 @@
 const itexmo = require('itexmo')({ apiCode: 'TR-YOLTO312100_TS7B2' })
 
 itexmo
-  .send({ to: '+639750242544', body: 'hai ma nonoy ni!...ga testing lang ko sa akon program' })
+  .send({ to: '+639750242544', body: 'hello world' })
   .then(message => console.log(message))
